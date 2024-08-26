@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Lista de Tareas</title>
+    
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <table id="taskTable">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-id="1">
+                <td>Comprar alimentos</td>
+                <td>Ir al supermercado y comprar frutas y verduras</td>
+                <td>Pendiente</td>
+                <td>
+                    <button class="edit-btn" onclick="openEditModal(1)">Editar</button>
+                    <button class="delete-btn" onclick="deleteTaskHandler(1)">Eliminar</button>
+                </td>
+            </tr>
+            <tr data-id="2">
+                <td>Hacer ejercicio</td>
+                <td>Ir al gimnasio o hacer una caminata de 30 minutos</td>
+                <td>En Progreso</td>
+                <td>
+                    <button class="edit-btn" onclick="openEditModal(2)">Editar</button>
+                    <button class="delete-btn" onclick="deleteTaskHandler(2)">Eliminar</button>
+                </td>
+            </tr>
+            <tr data-id="3">
+                <td>Leer un libro</td>
+                <td>Leer al menos 50 páginas de "El nombre del viento"</td>
+                <td>Completada</td>
+                <td>
+                    <button class="edit-btn" onclick="openEditModal(3)">Editar</button>
+                    <button class="delete-btn" onclick="deleteTaskHandler(3)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Modal de Edición -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Editar Tarea</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId" name="id">
+                <label for="editTitle">Título:</label>
+                <input type="text" id="editTitle" name="title" required>
+                <label for="editDescription">Descripción:</label>
+                <input type="text" id="editDescription" name="description" required>
+                <label for="editStatus">Estado:</label>
+                <select id="editStatus" name="status" required>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="en_progreso">En Progreso</option>
+                    <option value="completada">Completada</option>
+                </select>
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Sección para Agregar Nueva Tarea -->
+    <div id="addTaskSection">
+        <h2>Agregar Nueva Tarea</h2>
+        <form id="addTaskForm">
+            <label for="addTitle">Título:</label>
+            <input type="text" id="addTitle" required>
+            <label for="addDescription">Descripción:</label>
+            <input type="text" id="addDescription" required>
+            <label for="addStatus">Estado:</label>
+            <select id="addStatus" required>
+                <option value="pendiente">Pendiente</option>
+                <option value="en_progreso">En Progreso</option>
+                <option value="completada">Completada</option>
+            </select>
+            <button type="submit">Añadir Tarea</button>
+        </form>
+    </div>
+    
+    <script src="./src/tasks.js"></script>
+</body>
+</html>
