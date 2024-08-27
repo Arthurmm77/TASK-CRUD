@@ -43,4 +43,5 @@
 Podra abrir la pagina utilizando el live server en **index.html**
 
 ## 💻 Demostracion del proyecto
-![Captura de pantalla 2024-08-26 142753](https://github.com/user-attachments/assets/64faff7b-9413-46f4-862b-aed4b89d5681)
+
+![Captura de pantalla 2024-08-27 142617](https://github.com/user-attachments/assets/bffa8fe7-39c6-4faf-bb91-f16cad082ed8)
