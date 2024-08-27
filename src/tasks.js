@@ -185,7 +185,46 @@ document.getElementById('addTaskForm').addEventListener('submit', (event) => {
         document.getElementById('addTaskForm').reset();
     });
 });
+// Función para cargar todas las tareas en la tabla con filtrado
+async function loadTasks() {
+    //función asincrónica que recupera todas las tareas desde el servidor (usualmente mediante una petición HTTP).
+    const tasks = await getTasks();
+    
+    // Obtener valores de los filtros
+    const filterStatus = document.getElementById('filterStatus').value;
+    const filterTitle = document.getElementById('filterTitle').value.toLowerCase();
 
+    const taskTableBody = document.querySelector('#taskTable tbody');
+    taskTableBody.innerHTML = ''; // Limpia la tabla antes de cargar nuevas tareas
+
+    tasks
+    //La función filter se utiliza para crear un nuevo arreglo de tareas que cumplan con los criterios de filtrado
+        .filter(task => {
+            // Filtrar por estado
+            const matchesStatus = filterStatus === 'todos' || task.status === filterStatus;
+            // Filtrar por título
+            const matchesTitle = task.title.toLowerCase().includes(filterTitle);
+            return matchesStatus && matchesTitle;
+        })
+        .forEach(task => {//Para cada tarea que pasa el filtro, se crea dinámicamente una fila (<tr>) en la tabla HTML
+            const row = document.createElement('tr');
+            row.setAttribute('data-id', task.id);
+            row.innerHTML = `
+                <td>${task.title}</td>
+                <td>${task.description}</td>
+                <td>${task.status}</td>
+                <td>
+                    <button class="edit-btn" onclick="openEditModal(${task.id})">Editar</button>
+                    <button class="delete-btn" onclick="deleteTaskHandler(${task.id})">Eliminar</button>
+                </td>
+            `;
+            taskTableBody.appendChild(row);
+        });
+}
+
+// Escuchar cambios en los filtros para recargar la tabla automáticamente
+document.getElementById('filterStatus').addEventListener('change', loadTasks);
+document.getElementById('filterTitle').addEventListener('input', loadTasks);
 
 
 // Cargar las tareas al iniciar la página

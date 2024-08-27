@@ -148,3 +148,25 @@ button[type="submit"]:hover {
     width: 100%;
     margin-top: 10px;
 }
+#filterSection {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#filterSection label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#filterSection select, #filterSection input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}

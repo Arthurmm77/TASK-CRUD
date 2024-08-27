@@ -3,20 +3,20 @@
     {
       "title": "Comprar alimentos",
       "description": "Ir al supermercado y comprar frutas y verduras",
-      "status": "pendiente",
+      "status": "completada",
       "id": "1"
     },
     {
-      "id": "2",
       "title": "Hacer ejercicio",
       "description": "Ir al gimnasio o hacer una caminata de 30 minutos",
-      "status": "En Progreso"
+      "status": "en_progreso",
+      "id": "2"
     },
     {
-      "id": "3",
-      "title": "Leer un libro",
-      "description": "Leer al menos 50 páginas de 'El nombre del viento'",
-      "status": "Completada"
+      "id": "5",
+      "title": "Ir a buscar a mi hermano",
+      "description": "Colegio",
+      "status": "pendiente"
     }
   ]
 }

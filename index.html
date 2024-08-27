@@ -9,6 +9,17 @@
 </head>
 <body>
     <h1>Lista de Tareas</h1>
+    <div id="filterSection">
+        <label for="filterStatus">Filtrar por estado:</label>
+        <select id="filterStatus">
+            <option value="todos">Todos</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="en_progreso">En Progreso</option>
+        </select>
+        
+        <label for="filterTitle">Filtrar por título:</label>
+        <input type="text" id="filterTitle" placeholder="Buscar por título...">
+    </div>
     <table id="taskTable">
         <thead>
             <tr>
@@ -88,6 +99,7 @@
             <button type="submit">Añadir Tarea</button>
         </form>
     </div>
+    
     
     <script src="./src/tasks.js"></script>
 </body>
