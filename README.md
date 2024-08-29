@@ -27,16 +27,22 @@
 
 5. Le saldra lo siguiente en el comando:
    
-> git clone https://github.com/Arthurmm77/task-crud.git
-> Cloning into `Spoon-Knife`...
-> remote: Counting objects: 10, done.
-> remote: Compressing objects: 100% (8/8), done.
-> remove: Total 10 (delta 1), reused 10 (delta 1)
-> Unpacking objects: 100% (10/10), done.
+        git clone https://github.com/Arthurmm77/task-crud.git
+        Cloning into `Spoon-Knife`...
+        remote: Counting objects: 10, done.
+        remote: Compressing objects: 100% (8/8), done.
+        remove: Total 10 (delta 1), reused 10 (delta 1)
+        Unpacking objects: 100% (10/10), done.
 
 ## 🛠️ Abre y ejecuta el proyecto
 
-**Para utilizar la API tiene que poner en el terminal de visual studio el siguiente comando**
+**Para utilizar la API tiene que poner en el terminal de <img src= "https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"> el siguiente comando**
+
+Primero instalamos dependencias con:
+
+        npm install
+        
+Lanzamos la terminal con:
 
       npm run api
       
